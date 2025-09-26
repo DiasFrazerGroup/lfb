@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lfb"
+version = "0.1.0"
+description = "Code for running LFB."
+requires-python = ">=3.11"
+dependencies = [
+    "torch",
+    "transformers",
+    "pandas",
+    "matplotlib",
+    "tqdm",
+    "numpy",
+    "scikit-learn",
+    "polars",
+    "uv>=0.8.19",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+]
+
+[tool.hatch.build]
+sources = ["src"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["lfb"]
